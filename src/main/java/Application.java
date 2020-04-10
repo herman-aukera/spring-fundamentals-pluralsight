@@ -22,7 +22,7 @@ public class Application {
 
         System.out.println(service2.findAll().get(0).getFirstName());
 
-        System.out.println(service);
+        System.out.println(service2);
 
     }
 
