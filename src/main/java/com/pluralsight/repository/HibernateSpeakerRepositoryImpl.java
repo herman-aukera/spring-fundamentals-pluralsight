@@ -7,7 +7,6 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
-
 public class HibernateSpeakerRepositoryImpl implements SpeakerRepository {
 
     public List<Speaker> findAll() {
