@@ -10,27 +10,17 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+
 @Data
 @Service("speakerService")
 public class SpeakerServiceImpl implements SpeakerService {
 
 
-    private SpeakerRepository repository;
-
-    public SpeakerServiceImpl (){
-
-        System.out.println("SpeakerServiceImpl no args constructor" );
-    }
-    @Autowired
-    public SpeakerServiceImpl (SpeakerRepository speakerRepository){
-        System.out.println("SpeakerServiceImpl repository constructor" );
-
-        repository = speakerRepository;
-    }
+    private SpeakerRepository repository = new HibernateSpeakerRepositoryImpl();
 
     public List<Speaker> findAll() {
 
-    return repository.findAll();
+        return repository.findAll();
 
     }
 }
