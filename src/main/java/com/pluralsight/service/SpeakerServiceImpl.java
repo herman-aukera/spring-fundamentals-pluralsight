@@ -11,16 +11,17 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 @Data
+@Service("speakerService")
 public class SpeakerServiceImpl implements SpeakerService {
 
-    @Autowired
+
     private SpeakerRepository repository;
 
     public SpeakerServiceImpl (){
 
         System.out.println("SpeakerServiceImpl no args constructor" );
     }
-
+    @Autowired
     public SpeakerServiceImpl (SpeakerRepository speakerRepository){
         System.out.println("SpeakerServiceImpl repository constructor" );
 
