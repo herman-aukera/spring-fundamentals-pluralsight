@@ -9,6 +9,7 @@ import org.springframework.beans.factory.config.BeanDefinition;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.PostConstruct;
 import java.util.List;
 @Data
 @Service("speakerService")
@@ -27,6 +28,12 @@ public class SpeakerServiceImpl implements SpeakerService {
 
         repository = speakerRepository;
     }
+
+    @PostConstruct
+    private void initialize() {
+        System.out.println("We are called after the constructor");
+    }
+
 
     public List<Speaker> findAll() {
 
